@@ -109,7 +109,8 @@ WOL은... 알아서 설정하시면 될 것 같습니다..
 
 ![](https://blog.kakaocdn.net/dn/k0cv9/btr5D2ETzyB/EUwYwoNg4pUtDH3dT3ynk0/img.png)
 
-````{
+```
+{
     "accessory": "HTTP-SWITCH",
     "name": "컴퓨터",
     "switchType": "stateful",
@@ -119,7 +120,7 @@ WOL은... 알아서 설정하시면 될 것 같습니다..
         "url": "컴퓨터 상태 확인",
         "method": "GET"
     }
-}```
+}
+```
 
 끝!
-````
