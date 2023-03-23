@@ -1,4 +1,23 @@
 <?php
+
+/*
+
+사용 예시:
+
+// 스마트싱스를 이용한 전원 켜기 [type, action, token, device_id 는 필수입니다.]
+api.php?type=st&action=on&token=aaaa-aaaaaa-aaaaaaa-aaaaaa-aaaaa&device_id=bbbbb-bbbbb-bbbbb-bbbbb
+
+// 스마트싱스 및 PC 제어를 이용한 전원 끄기 [type, action, token, device_id, remote_ip, remote_pw, remote_port 는 필수입니다. waiting_time 은 선택입니다.(기본값 20초)]
+api.php?type=st&action=off&token=aaaa-aaaaaa-aaaaaaa-aaaaaa-aaaaa&device_id=bbbbb-bbbbb-bbbbb-bbbbb&remote_ip=123.234.123.234&remote_pw=1234&remote_port=8333&waiting_time=20
+
+
+// wol을 이용한 전원 켜기 [type, action, remote_ip, remote_mac 는 필수입니다.]
+api.php?type=wol&action=on&remote_ip=123.123.123.123&remote_mac=AA-AA-AA-AA-AA-AA
+
+// wol을 이용한 전원 끄기 [type, action, remote_ip, remote_pw, remote_port 는 필수입니다.]
+api.php?type=wol&action=off&remote_ip=123.123.123.123&remote_pw=1234&remote_port=8333
+*/
+
 $smartthings_token = $_GET['token'];         //smartthings only
 $smartthings_device_id = $_GET['device_id']; //smartthings only
 $waiting_time = $_GET['waiting_time'];       //smartthings only
@@ -60,23 +79,6 @@ if($_GET['type'] == "st") { // SMARTTHINGS SWITCH
             echo 'Error:' . curl_error($ch);
         }
         curl_close($ch);
-    } else if ($_GET['action'] == "status"){
-        $url = "http://".$remote_ip.":".$remote_port."/";
-        $timeout = 1;
-        
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT_MS, $timeout * 1000);
-        curl_exec($ch);
-        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
-        
-        if ($httpcode == 200) {
-            echo "1";
-        } else {
-            echo "0";
-        }
     } else {
         die("somthing wrong");
     }
@@ -123,25 +125,25 @@ if($_GET['type'] == "st") { // SMARTTHINGS SWITCH
             echo 'Response: ' . $response;
         }
         curl_close($ch);
-    } else if ($_GET['action'] == "status"){
-        $url = "http://".$remote_ip.":".$remote_port."/";
-        $timeout = 1;
-        
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT_MS, $timeout * 1000);
-        curl_exec($ch);
-        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
-        
-        if ($httpcode == 200) {
-            echo "1";
-        } else {
-            echo "0";
-        }
     } else {
         die("somthing wrong");
+    }
+} else if ($_GET['type'] == "status"){
+    $url = "http://".$remote_ip.":".$remote_port."/";
+    $timeout = 1;
+    
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT_MS, $timeout * 1000);
+    curl_exec($ch);
+    $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+    
+    if ($httpcode == 200) {
+        echo "1";
+    } else {
+        echo "0";
     }
 }
 ?>
