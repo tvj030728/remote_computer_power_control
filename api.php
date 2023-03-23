@@ -4,6 +4,10 @@
 
 사용 예시:
 
+// 컴퓨터 ON OFF 체크. 1 켜짐 / 2 꺼짐 
+api.php?type=status&remote_ip=pc.local.ivlis.kr&remote_port=5001
+
+
 // 스마트싱스를 이용한 전원 켜기 [type, action, token, device_id 는 필수입니다.]
 api.php?type=st&action=on&token=aaaa-aaaaaa-aaaaaaa-aaaaaa-aaaaa&device_id=bbbbb-bbbbb-bbbbb-bbbbb
 
