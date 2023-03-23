@@ -13,9 +13,7 @@
 
 설치 후, [http://ip.address:8581/](http://ip.address:8581/) 로 접속하면 아래와 같은 화면이 뜹니다.
 
-![e4e14ba969d35078f6ca664300ab4101_1679576127_3446.png](https://sjva.me/data/editor/2303/e4e14ba969d35078f6ca664300ab4101_1679576127_3446.png "e4e14ba969d35078f6ca664300ab4101_1679576127_3446.png")
-
-
+![](https://blog.kakaocdn.net/dn/b99qwh/btr5sgLNGeQ/6dqfkEmA2iCBzuRjYIaYsk/img.png)
 
 화면에 보이는 QR코드를 스캔하면 애플 홈에 Home Bridge 를 등록할 수 있습니다.
 
@@ -27,7 +25,8 @@
 
 프로그램을 받고 실행하면, (안될경우 우측 하단 시스템 트레이 아이콘을 눌러 실행해주세요)
 
-![e4e14ba969d35078f6ca664300ab4101_1679576303_7436.png](https://sjva.me/data/editor/2303/e4e14ba969d35078f6ca664300ab4101_1679576303_7436.png "e4e14ba969d35078f6ca664300ab4101_1679576303_7436.png")  
+![](https://blog.kakaocdn.net/dn/QCGnk/btr5D162Stg/uV2n9Pggaa5SFwBGjwuag1/img.png)
+
 이와 같이 설정창이 뜹니다.
 
 Auto load at Windows startup 을 체크해주세요.
@@ -54,28 +53,21 @@ Tuya, Tapo, Mi 등등 서드파티 플러그라도, 스마트싱스에 등록할
 
 [https://account.smartthings.com/tokens](https://account.smartthings.com/tokens) 에 접속합니다.
 
-**![e4e14ba969d35078f6ca664300ab4101_1679576659_0888.gif](https://sjva.me/data/editor/2303/e4e14ba969d35078f6ca664300ab4101_1679576659_0888.gif "e4e14ba969d35078f6ca664300ab4101_1679576659_0888.gif")**
+![](https://blog.kakaocdn.net/dn/dhz5TA/btr5vt5dcjS/HJRAphdAd012fZHsdwtTC1/img.png)
 
 새 토큰 만들기를 클릭합니다.
 
-**![e4e14ba969d35078f6ca664300ab4101_1679576659_1071.png](https://sjva.me/data/editor/2303/e4e14ba969d35078f6ca664300ab4101_1679576659_1071.png "e4e14ba969d35078f6ca664300ab4101_1679576659_1071.png")**
+![](https://blog.kakaocdn.net/dn/cwiJEz/btr5DSWxHm1/OFgkFCYHqhYYGmq0t8YH51/img.png)
 
 위와 같이 권한을 설정합니다.
-
-**  
-![e4e14ba969d35078f6ca664300ab4101_1679576659_1355.gif](https://sjva.me/data/editor/2303/e4e14ba969d35078f6ca664300ab4101_1679576659_1355.gif "e4e14ba969d35078f6ca664300ab4101_1679576659_1355.gif")**
 
 만들어진 토큰을 복사합니다.
 
 [https://blackdeery.github.io/st_helper/](https://blackdeery.github.io/st_helper/) 에 접속하여 토큰을 넣고 장치를 조회합니다.
 
-![e4e14ba969d35078f6ca664300ab4101_1679576837_7905.png](https://sjva.me/data/editor/2303/e4e14ba969d35078f6ca664300ab4101_1679576837_7905.png "e4e14ba969d35078f6ca664300ab4101_1679576837_7905.png")
-
-
+![](https://blog.kakaocdn.net/dn/beFUrH/btr5sgZjUr3/mEKnzDjssZHvzkKuTnnzr0/img.png)
 
 컴퓨터가 연결된 플러그의 deviceid를 복사합니다.
-
-
 
 // 상태 확인 URL (컴퓨터가 켜져있을 경우, 1 꺼져있을 경우 0 출력됨)
 
@@ -111,34 +103,22 @@ WOL은... 알아서 설정하시면 될 것 같습니다..
 
 홈브릿지 -> 플러그인에서 "homebridge http switch" 를 검색해서 설치해주세요.
 
-![e4e14ba969d35078f6ca664300ab4101_1679577722_0529.png](https://sjva.me/data/editor/2303/e4e14ba969d35078f6ca664300ab4101_1679577722_0529.png "e4e14ba969d35078f6ca664300ab4101_1679577722_0529.png")
-
-
+![](https://blog.kakaocdn.net/dn/bAIwuw/btr5zP08j8g/azvrGp4bDCZUrGXVJaceUK/img.png)
 
 설치 후, 설정 버튼을 눌러 아래와 같이 설정합니다.
 
-![e4e14ba969d35078f6ca664300ab4101_1679577811_1926.png](https://sjva.me/data/editor/2303/e4e14ba969d35078f6ca664300ab4101_1679577811_1926.png "e4e14ba969d35078f6ca664300ab4101_1679577811_1926.png")
+![](https://blog.kakaocdn.net/dn/k0cv9/btr5D2ETzyB/EUwYwoNg4pUtDH3dT3ynk0/img.png)
 
 {
-
-"accessory": "HTTP-SWITCH",
-
-"name": "컴퓨터",
-
-"switchType": "stateful",
-
-"onUrl": "컴퓨터 켜기 URL",
-
-"offUrl": "컴퓨터 끄기 URL",
-
-"statusUrl": {
-
-"url": "컴퓨터 상태 확인",
-
-"method": "GET"
-
-}
-
+    "accessory": "HTTP-SWITCH",
+    "name": "컴퓨터",
+    "switchType": "stateful",
+    "onUrl": "컴퓨터 켜기 URL",
+    "offUrl": "컴퓨터 끄기 URL",
+    "statusUrl": {
+        "url": "컴퓨터 상태 확인",
+        "method": "GET"
+    }
 }
 
 끝!
