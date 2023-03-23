@@ -64,7 +64,7 @@ if($_GET['type'] == "st") { // SMARTTHINGS SWITCH
         }
         curl_close($ch);
     
-        sleep(20);
+        sleep($waiting_time);
     
         $ch = curl_init();
     
